@@ -1,0 +1,22 @@
+<script>
+
+// const balance = (savings,withdrawal)=>{
+//     return savings -= withdrawal;
+// }
+
+const bal =(cb)=>{
+    cb()
+}
+
+const withdraw=()=>{
+    setTimeout(()=>{
+        console.log("withdraw")
+    },1000)
+}
+
+const savings = ()=>{
+    console.log("savings")
+}
+bal(withdraw)
+bal(savings)
+</script>
