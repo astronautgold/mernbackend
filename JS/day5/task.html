@@ -1,0 +1,164 @@
+<script>
+  //task1
+  const student = () => {
+    let name = "ramya";
+    let course = "it";
+    let city = "chennai";
+    let institute = "anna university";
+    console.log(
+      `${name} is studing in ${institute} which is located in ${city} a course called ${course}`,
+    );
+  };
+  student();
+  //task2
+
+  const employee = (amount) => {
+    let salary = amount;
+    let sum = 0;
+    for (let i = 0; i < 12; i++) {
+      sum += salary;
+      console.log(sum);
+    }
+  };
+  employee(1000);
+
+  //task4
+
+  const Register = (nam = "ramya", age = 22, me = "it") => {
+    nam = "tara";
+    age = 30;
+    me = "cse";
+
+    console.log(`iam ${nam}my age is  ${age} and iam studying${me}`);
+  };
+  Register();
+
+  //task5
+
+  const products = (...propice) => {
+    let proname = ["laptop", "jewels", "motherboard"];
+
+    let sum = 0;
+    for (let i = 0; i < propice.length; i++) {
+      sum += propice[i];
+    }
+    console.log(`the total bill is ${sum}`);
+  };
+  products(2000, 300, 10000);
+
+  // Task 3 - Discount Price
+  const discountedPrice = (price, discount) => price - (price * discount) / 100;
+
+  console.log("Final Price:", discountedPrice(1000, 20));
+
+  // Task 6 - Spread Operator
+  const frontend = ["HTML", "CSS", "JavaScript"];
+  const backend = ["Node.js", "Express.js"];
+
+  const technologies = [...frontend, ...backend];
+
+  console.log(technologies);
+
+  // Task 7 - Object Copy using Spread
+  const employee = {
+    id: 1,
+    name: "Ramya",
+  };
+
+  const updatedEmployee = {
+    ...employee,
+    department: "IT",
+    experience: "2 Years",
+    salary: 50000,
+  };
+
+  console.log(updatedEmployee);
+
+  // Task 8 - Destructuring
+  const studentDetails = {
+    name: "Ramya",
+    age: 22,
+    course: "IT",
+  };
+
+  const { name, age, course } = studentDetails;
+
+  console.log(name, age, course);
+
+  // Task 9 - Enhanced Object Literals
+  const companyName = "Google";
+  const location = "USA";
+
+  const company = { companyName, location };
+
+  console.log(company);
+
+  // Task 10 - Optional Chaining & Nullish Coalescing
+  const user = {
+    profile: {
+      address: {
+        city: "Chennai",
+      },
+    },
+  };
+
+  console.log(user?.profile?.address?.city ?? "Not Available");
+
+  // Task 11 - Highest Mark
+  const highestMark = (...marks) => Math.max(...marks);
+
+  console.log(highestMark(78, 90, 85, 99));
+
+  // Task 12 - Merge Arrays
+  const mergeCourses = (...courses) => [].concat(...courses);
+
+  console.log(mergeCourses(["HTML", "CSS"], ["JS", "React"], ["Node.js"]));
+
+  // Task 13 - Clone Product
+  const product = {
+    id: 1,
+    name: "Laptop",
+    stock: 10,
+  };
+
+  const newProduct = {
+    ...product,
+    stock: 25,
+  };
+
+  console.log(newProduct);
+
+  // Task 14 - User Info
+  const displayUser = ({ name, email, city }) =>
+    console.log(`Name: ${name}, Email: ${email}, City: ${city}`);
+
+  displayUser({
+    name: "Ramya",
+    email: "ramya@gmail.com",
+    city: "Chennai",
+  });
+
+  // Task 15 - Employee Management System
+  let employees = [];
+
+  const addEmployee = (id, name, salary, department = "General") =>
+    employees.push({ id, name, salary, department });
+
+  const displayEmployees = () =>
+    employees.forEach(({ id, name, salary, department }) =>
+      console.log(`${id} - ${name} - ${salary} - ${department}`),
+    );
+
+  const calculateSalary = (...salaries) =>
+    salaries.reduce((sum, salary) => sum + salary, 0);
+
+  addEmployee(1, "Ramya", 50000, "IT");
+  addEmployee(2, "Kaviya", 45000, "HR");
+
+  displayEmployees();
+
+  console.log(
+    "Total Salary:",
+    calculateSalary(...employees.map((emp) => emp.salary)),
+  );
+</script>

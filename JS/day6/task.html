@@ -1,0 +1,169 @@
+<script>
+
+
+    
+// Task 1 - Student Data Loading
+
+
+const getStudent = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Sudhan");
+    }, 2000);
+  });
+};
+
+getStudent()
+  .then((student) => {
+    console.log(student);
+  });
+
+
+
+// Task 2 - Employee Details
+
+
+const getEmployee = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        id: 1,
+        name: "Sudhan",
+        role: "Trainer"
+      });
+    }, 3000);
+  });
+};
+
+getEmployee()
+  .then((employee) => {
+    console.log(employee);
+  });
+
+
+// Task 3 - Login System
+
+
+const login = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Login Success");
+    }, 2000);
+  });
+};
+
+login()
+  .then((message) => {
+    console.log(message);
+  });
+
+
+
+// Task 4 - Product Loading
+
+
+const getProducts = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([
+        "Laptop",
+        "Mobile",
+        "Keyboard"
+      ]);
+    }, 2000);
+  });
+};
+
+getProducts()
+  .then((products) => {
+    console.log(products);
+  });
+
+
+
+// Task 5 - Food Delivery System
+
+
+const orderFood = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Pizza Delivered");
+    }, 4000);
+  });
+};
+
+orderFood()
+  .then((result) => {
+    console.log(result);
+  });
+
+
+
+// Task 6 - Callback Hell to Promise Chain
+
+
+const getUser = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("User Loaded");
+    }, 1000);
+  });
+};
+
+const getOrders = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Orders Loaded");
+    }, 1000);
+  });
+};
+
+const getPayments = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Payments Loaded");
+    }, 1000);
+  });
+};
+
+getUser()
+  .then((user) => {
+    console.log(user);
+    return getOrders();
+  })
+  .then((orders) => {
+    console.log(orders);
+    return getPayments();
+  })
+  .then((payments) => {
+    console.log(payments);
+    console.log("Completed");
+  });
+
+
+
+// Task 7 - Success & Failure Handling
+
+
+const payment = () => {
+  return new Promise((resolve, reject) => {
+
+    const status = false;
+
+    if (status) {
+      resolve("Payment Success");
+    } else {
+      reject("Payment Failed");
+    }
+
+  });
+};
+
+payment()
+  .then((message) => {
+    console.log(message);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+</script>
